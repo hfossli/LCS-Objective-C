@@ -10,11 +10,15 @@
 
 @implementation NSArray (LongestCommonSubsequence)
 
-- (NSIndexSet*) indexesOfCommonElementsWithArray:(NSArray*)array {
+- (NSIndexSet *)indexesOfCommonElementsWithArray:(NSArray *)array
+{
     return [self indexesOfCommonElementsWithArray:array addedIndexes:nil removedIndexes:nil];
 }
 
-- (NSIndexSet*) indexesOfCommonElementsWithArray:(NSArray*)array addedIndexes:(NSIndexSet**)addedIndexes removedIndexes:(NSIndexSet**)removedIndexes {
+- (NSIndexSet *)indexesOfCommonElementsWithArray:(NSArray *)array
+                                    addedIndexes:(NSIndexSet **)addedIndexes
+                                  removedIndexes:(NSIndexSet **)removedIndexes
+{
     
     NSInteger lengths[self.count+1][array.count+1];
     
@@ -72,8 +76,8 @@
         
         *addedIndexes = _addedIndexes;
     }
-    return commonIndexes;
     
+    return commonIndexes;
 }
 
 @end
