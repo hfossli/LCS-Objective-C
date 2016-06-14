@@ -132,6 +132,15 @@
     LCSTestReplicable(first, second);
 }
 
+- (void)testOnlyUnequal
+{
+    NSArray *first = @[@"a", @"a", @"a", @"a", @"a"];
+    NSArray *second = @[@"b", @"b", @"b", @"b", @"b"];
+    
+    LCSTestCompareCount(first, second, 0);
+    LCSTestReplicable(first, second);
+}
+
 - (void)testManyEqual
 {
     NSArray *first = @[@"a", @"a", @"a", @"a", @"a"];
