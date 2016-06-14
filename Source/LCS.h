@@ -12,9 +12,9 @@
 
 + (NSIndexSet *)compareArray:(NSArray *)a
                     andArray:(NSArray *)b
-               commonIndexes:(NSIndexSet **)common
-                addedIndexes:(NSIndexSet **)added
-              removedIndexes:(NSIndexSet **)removed
+               commonIndexes:(out NSIndexSet **)common
+                addedIndexes:(out NSIndexSet **)added
+              removedIndexes:(out NSIndexSet **)removed
             objectComparison:(BOOL(^)(id objectA, id objectB))objectComparison;
 
 @end
