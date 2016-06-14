@@ -6,4 +6,5 @@
 //
 //
 
+#import "LCS.h"
 #import "NSArray+LongestCommonSubsequence.h"

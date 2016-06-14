@@ -20,18 +20,18 @@
                                     addedIndexes:(NSIndexSet **)addedIndexes
                                   removedIndexes:(NSIndexSet **)removedIndexes
 {
-    NSIndexSet *commondIndexes = nil;
+    NSIndexSet *commonIndexes = nil;
     
     [LCS compareArray:self
             withArray:array
-        commonIndexes:&commondIndexes
+        commonIndexes:&commonIndexes
          addedIndexes:addedIndexes
        removedIndexes:removedIndexes
      objectComparison:^BOOL(id objectA, id objectB) {
         return [objectA isEqual:objectB];
     }];
     
-    return commondIndexes;
+    return commonIndexes;
 }
 
 @end
