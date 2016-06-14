@@ -24,6 +24,7 @@
 		1AC04D9B182A7D550079D681 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AC04D99182A7D550079D681 /* InfoPlist.strings */; };
 		1AC04D9D182A7D550079D681 /* LongestCommonSubsequenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC04D9C182A7D550079D681 /* LongestCommonSubsequenceTests.m */; };
 		A366B5911D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m in Sources */ = {isa = PBXBuildFile; fileRef = A366B5901D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m */; };
+		A366B5951D0FF36E0022DE88 /* LCS.m in Sources */ = {isa = PBXBuildFile; fileRef = A366B5941D0FF36E0022DE88 /* LCS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		A366B58F1D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LongestCommonSubsequence.h"; sourceTree = "<group>"; };
 		A366B5901D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LongestCommonSubsequence.m"; sourceTree = "<group>"; };
 		A366B5921D0FF2380022DE88 /* LCS-Objective-C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LCS-Objective-C.h"; sourceTree = "<group>"; };
+		A366B5931D0FF36E0022DE88 /* LCS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCS.h; sourceTree = "<group>"; };
+		A366B5941D0FF36E0022DE88 /* LCS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCS.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				A366B5921D0FF2380022DE88 /* LCS-Objective-C.h */,
 				A366B58F1D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.h */,
 				A366B5901D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m */,
+				A366B5931D0FF36E0022DE88 /* LCS.h */,
+				A366B5941D0FF36E0022DE88 /* LCS.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -218,7 +223,7 @@
 		1AC04D63182A7D550079D681 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = SK;
+				CLASSPREFIX = LCS;
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1AC04D8E182A7D550079D681 = {
@@ -274,6 +279,7 @@
 			files = (
 				A366B5911D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m in Sources */,
 				1AC04D7F182A7D550079D681 /* SKAppDelegate.m in Sources */,
+				A366B5951D0FF36E0022DE88 /* LCS.m in Sources */,
 				1AC04D88182A7D550079D681 /* SKViewController.m in Sources */,
 				1AC04D7B182A7D550079D681 /* main.m in Sources */,
 			);
