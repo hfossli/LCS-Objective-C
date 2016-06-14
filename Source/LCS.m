@@ -17,12 +17,12 @@ typedef NS_ENUM(NSUInteger, _LCSObjectEquallity)
 
 @implementation LCS
 
-+ (NSIndexSet *)compareArray:(NSArray *)a
-                    andArray:(NSArray *)b
-               commonIndexes:(out NSIndexSet **)commonIndexesPointer
-                addedIndexes:(out NSIndexSet **)addedIndexesPointer
-              removedIndexes:(out NSIndexSet **)removedIndexesPointer
-            objectComparison:(BOOL(^)(id objectA, id objectB))objectComparison
++ (void)compareArray:(NSArray *)a
+           withArray:(NSArray *)b
+       commonIndexes:(out NSIndexSet **)commonIndexesPointer
+        addedIndexes:(out NSIndexSet **)addedIndexesPointer
+      removedIndexes:(out NSIndexSet **)removedIndexesPointer
+    objectComparison:(BOOL(^)(id objectA, id objectB))objectComparison
 {
     NSUInteger aCount = a.count;
     NSUInteger bCount = b.count;

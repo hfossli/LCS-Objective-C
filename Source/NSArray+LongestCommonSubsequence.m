@@ -22,7 +22,8 @@
 {
     NSIndexSet *commondIndexes = nil;
     
-    [LCS compareArray:self andArray:array
+    [LCS compareArray:self
+            withArray:array
         commonIndexes:&commondIndexes
          addedIndexes:addedIndexes
        removedIndexes:removedIndexes

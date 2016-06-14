@@ -10,11 +10,11 @@
 
 @interface LCS : NSObject
 
-+ (NSIndexSet *)compareArray:(NSArray *)a
-                    andArray:(NSArray *)b
-               commonIndexes:(out NSIndexSet **)common
-                addedIndexes:(out NSIndexSet **)added
-              removedIndexes:(out NSIndexSet **)removed
-            objectComparison:(BOOL(^)(id objectA, id objectB))objectComparison;
++ (void)compareArray:(NSArray *)a
+           withArray:(NSArray *)b
+       commonIndexes:(out NSIndexSet **)common
+        addedIndexes:(out NSIndexSet **)added
+      removedIndexes:(out NSIndexSet **)removed
+    objectComparison:(BOOL(^)(id objectA, id objectB))objectComparison;
 
 @end
