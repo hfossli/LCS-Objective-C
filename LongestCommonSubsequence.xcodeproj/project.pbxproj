@@ -23,7 +23,7 @@
 		1AC04D93182A7D550079D681 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC04D72182A7D550079D681 /* UIKit.framework */; };
 		1AC04D9B182A7D550079D681 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AC04D99182A7D550079D681 /* InfoPlist.strings */; };
 		1AC04D9D182A7D550079D681 /* LongestCommonSubsequenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC04D9C182A7D550079D681 /* LongestCommonSubsequenceTests.m */; };
-		1AC04DA8182A7D9D0079D681 /* NSArray+LongestCommonSubsequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC04DA7182A7D9D0079D681 /* NSArray+LongestCommonSubsequence.m */; };
+		A366B5911D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m in Sources */ = {isa = PBXBuildFile; fileRef = A366B5901D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +58,8 @@
 		1AC04D98182A7D550079D681 /* LongestCommonSubsequenceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LongestCommonSubsequenceTests-Info.plist"; sourceTree = "<group>"; };
 		1AC04D9A182A7D550079D681 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1AC04D9C182A7D550079D681 /* LongestCommonSubsequenceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongestCommonSubsequenceTests.m; sourceTree = "<group>"; };
-		1AC04DA6182A7D9D0079D681 /* NSArray+LongestCommonSubsequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LongestCommonSubsequence.h"; sourceTree = "<group>"; };
-		1AC04DA7182A7D9D0079D681 /* NSArray+LongestCommonSubsequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LongestCommonSubsequence.m"; sourceTree = "<group>"; };
+		A366B58F1D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LongestCommonSubsequence.h"; sourceTree = "<group>"; };
+		A366B5901D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LongestCommonSubsequence.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +89,7 @@
 		1AC04D62182A7D550079D681 = {
 			isa = PBXGroup;
 			children = (
+				A366B58E1D0FF1E90022DE88 /* Source */,
 				1AC04D74182A7D550079D681 /* LongestCommonSubsequence */,
 				1AC04D96182A7D550079D681 /* LongestCommonSubsequenceTests */,
 				1AC04D6D182A7D550079D681 /* Frameworks */,
@@ -126,8 +127,6 @@
 				1AC04D83182A7D550079D681 /* Main_iPad.storyboard */,
 				1AC04D86182A7D550079D681 /* SKViewController.h */,
 				1AC04D87182A7D550079D681 /* SKViewController.m */,
-				1AC04DA6182A7D9D0079D681 /* NSArray+LongestCommonSubsequence.h */,
-				1AC04DA7182A7D9D0079D681 /* NSArray+LongestCommonSubsequence.m */,
 				1AC04D89182A7D550079D681 /* Images.xcassets */,
 				1AC04D75182A7D550079D681 /* Supporting Files */,
 			);
@@ -162,6 +161,15 @@
 				1AC04D99182A7D550079D681 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A366B58E1D0FF1E90022DE88 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A366B58F1D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.h */,
+				A366B5901D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC04DA8182A7D9D0079D681 /* NSArray+LongestCommonSubsequence.m in Sources */,
+				A366B5911D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m in Sources */,
 				1AC04D7F182A7D550079D681 /* SKAppDelegate.m in Sources */,
 				1AC04D88182A7D550079D681 /* SKViewController.m in Sources */,
 				1AC04D7B182A7D550079D681 /* main.m in Sources */,
