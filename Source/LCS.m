@@ -22,11 +22,6 @@
     }];
 }
 
-static BOOL LCSObjectEquallityIsValid(LCSObjectEquallity equality)
-{
-    return equality == LCSObjectEquallityUnequal || equality == LCSObjectEquallityEqual || equality == LCSObjectEquallityEqualButUpdated;
-}
-
 + (void)compareArray:(NSArray *)a
            withArray:(NSArray *)b
        commonIndexes:(out NSIndexSet **)commonIndexesPointer
@@ -61,8 +56,13 @@ static BOOL LCSObjectEquallityIsValid(LCSObjectEquallity equality)
     NSMutableIndexSet *updatedIndexes = [NSMutableIndexSet indexSet];
     
     for (NSInteger i = 0, j = 0 ; i < aCount && j < bCount;) {
+        
         LCSObjectEquallity equality = cache[i][j];
-        NSAssert(LCSObjectEquallityIsValid(equality), @"The cache should be filled up and these values should be the only valid values. Received %i", (int)equality);
+        
+        NSAssert(^{
+            return equality == LCSObjectEquallityUnequal || equality == LCSObjectEquallityEqual || equality == LCSObjectEquallityEqualButUpdated;
+        }(), @"The cache should be filled up and these values should be the only valid values. Received %i", (int)equality);
+        
         if (equality == LCSObjectEquallityEqual) {
             [commonIndexes addIndex:i];
             i++; j++;
