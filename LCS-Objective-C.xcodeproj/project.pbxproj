@@ -21,10 +21,10 @@
 		1AC04D92182A7D550079D681 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC04D6E182A7D550079D681 /* Foundation.framework */; };
 		1AC04D93182A7D550079D681 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC04D72182A7D550079D681 /* UIKit.framework */; };
 		1AC04D9B182A7D550079D681 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AC04D99182A7D550079D681 /* InfoPlist.strings */; };
-		A366B5911D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m in Sources */ = {isa = PBXBuildFile; fileRef = A366B5901D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m */; };
 		A366B5951D0FF36E0022DE88 /* LCS.m in Sources */ = {isa = PBXBuildFile; fileRef = A366B5941D0FF36E0022DE88 /* LCS.m */; };
-		A366B59C1D102F0A0022DE88 /* LongCommonSubsequenceInTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A366B59A1D102F0A0022DE88 /* LongCommonSubsequenceInTableView.m */; };
 		A366B59D1D102F0A0022DE88 /* LongestCommonSubsequenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A366B59B1D102F0A0022DE88 /* LongestCommonSubsequenceTests.m */; };
+		A3C309091D1BE3D700D8561C /* LCSTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C309081D1BE3D700D8561C /* LCSTest.m */; };
+		A3C3090C1D1BE3FC00D8561C /* NSArray+LongestCommonSubsequence.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C3090B1D1BE3FC00D8561C /* NSArray+LongestCommonSubsequence.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,13 +57,14 @@
 		1AC04D90182A7D550079D681 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1AC04D98182A7D550079D681 /* LongestCommonSubsequenceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LongestCommonSubsequenceTests-Info.plist"; sourceTree = "<group>"; };
 		1AC04D9A182A7D550079D681 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A366B58F1D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LongestCommonSubsequence.h"; sourceTree = "<group>"; };
-		A366B5901D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LongestCommonSubsequence.m"; sourceTree = "<group>"; };
 		A366B5921D0FF2380022DE88 /* LCS-Objective-C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LCS-Objective-C.h"; sourceTree = "<group>"; };
 		A366B5931D0FF36E0022DE88 /* LCS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCS.h; sourceTree = "<group>"; };
 		A366B5941D0FF36E0022DE88 /* LCS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCS.m; sourceTree = "<group>"; };
 		A366B59A1D102F0A0022DE88 /* LongCommonSubsequenceInTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongCommonSubsequenceInTableView.m; sourceTree = "<group>"; };
 		A366B59B1D102F0A0022DE88 /* LongestCommonSubsequenceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongestCommonSubsequenceTests.m; sourceTree = "<group>"; };
+		A3C309081D1BE3D700D8561C /* LCSTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSTest.m; sourceTree = "<group>"; };
+		A3C3090A1D1BE3FC00D8561C /* NSArray+LongestCommonSubsequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LongestCommonSubsequence.h"; sourceTree = "<group>"; };
+		A3C3090B1D1BE3FC00D8561C /* NSArray+LongestCommonSubsequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LongestCommonSubsequence.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +133,8 @@
 				1AC04D83182A7D550079D681 /* Main_iPad.storyboard */,
 				1AC04D86182A7D550079D681 /* SKViewController.h */,
 				1AC04D87182A7D550079D681 /* SKViewController.m */,
+				A3C3090A1D1BE3FC00D8561C /* NSArray+LongestCommonSubsequence.h */,
+				A3C3090B1D1BE3FC00D8561C /* NSArray+LongestCommonSubsequence.m */,
 				1AC04D89182A7D550079D681 /* Images.xcassets */,
 				1AC04D75182A7D550079D681 /* Supporting Files */,
 			);
@@ -170,8 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				A366B5921D0FF2380022DE88 /* LCS-Objective-C.h */,
-				A366B58F1D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.h */,
-				A366B5901D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m */,
 				A366B5931D0FF36E0022DE88 /* LCS.h */,
 				A366B5941D0FF36E0022DE88 /* LCS.m */,
 			);
@@ -183,6 +184,7 @@
 			children = (
 				A366B59A1D102F0A0022DE88 /* LongCommonSubsequenceInTableView.m */,
 				A366B59B1D102F0A0022DE88 /* LongestCommonSubsequenceTests.m */,
+				A3C309081D1BE3D700D8561C /* LCSTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -285,8 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A366B5911D0FF1E90022DE88 /* NSArray+LongestCommonSubsequence.m in Sources */,
 				1AC04D7F182A7D550079D681 /* SKAppDelegate.m in Sources */,
+				A3C3090C1D1BE3FC00D8561C /* NSArray+LongestCommonSubsequence.m in Sources */,
 				A366B5951D0FF36E0022DE88 /* LCS.m in Sources */,
 				1AC04D88182A7D550079D681 /* SKViewController.m in Sources */,
 				1AC04D7B182A7D550079D681 /* main.m in Sources */,
@@ -297,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A366B59C1D102F0A0022DE88 /* LongCommonSubsequenceInTableView.m in Sources */,
+				A3C309091D1BE3D700D8561C /* LCSTest.m in Sources */,
 				A366B59D1D102F0A0022DE88 /* LongestCommonSubsequenceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

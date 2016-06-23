@@ -1,16 +1,14 @@
 //
 //  NSArray+LongestCommonSubsequence.h
-//  LongestCommonSubsequence
+//  LCS-Objective-C
 //
-//  Created by Soroush Khanlou on 11/6/13.
+//  Created by Håvard Fossli on 23.06.2016.
 //
 //
 
 #import <Foundation/Foundation.h>
 
 @interface NSArray (LongestCommonSubsequence)
-
-- (NSIndexSet *)indexesOfCommonElementsWithArray:(NSArray *)array;
 
 - (NSIndexSet *)indexesOfCommonElementsWithArray:(NSArray *)array
                                     addedIndexes:(NSIndexSet **)addedIndexes
