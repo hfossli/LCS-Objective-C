@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "LCS-Objective-C"
-    s.version      = "2.0"
+    s.version      = "3.0"
     s.summary      = "LCS (Longest Common Subsequences) for Objective-C"
     s.homepage     = "https://github.com/hfossli/LCS-Objective-C"
     s.license      = 'MIT'
