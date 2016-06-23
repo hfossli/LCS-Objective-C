@@ -85,6 +85,15 @@
     LCSTestReplicable(first, second);
 }
 
+- (void)testInsert
+{
+    NSArray *first = @[@"c"];
+    NSArray *second = @[@"a", @"b", @"c"];
+    
+    LCSTestCompareCount(first, second, 1);
+    LCSTestReplicable(first, second);
+}
+
 - (void)testAddAll
 {
     NSArray *first = @[];

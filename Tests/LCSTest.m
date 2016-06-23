@@ -78,7 +78,6 @@
     XCTAssertEqualObjects(added, expectedAdded, @"Not as expected");
     
     NSMutableIndexSet *expectedUpdated = [NSMutableIndexSet new];
-    [expectedUpdated addIndex:0];
     XCTAssertEqualObjects(updated, expectedUpdated, @"Not as expected");
 }
 
@@ -90,7 +89,7 @@
                    ];
     NSArray *b = @[[DataObject newWithId:1000 value:@"bbb"],
                    [DataObject newWithId:1001 value:@"aaa"],
-                   [DataObject newWithId:1002 value:@"aaa"]
+                   [DataObject newWithId:1002 value:@"ccc"]
                    ];
     
     NSIndexSet *common, *removed, *added, *updated;
@@ -104,15 +103,111 @@
     [expectedCommon addIndex:2];
     XCTAssertEqualObjects(common, expectedCommon, @"Not as expected");
     
+    NSMutableIndexSet *expectedUpdated = [NSMutableIndexSet new];
+    [expectedUpdated addIndex:0];
+    [expectedUpdated addIndex:2];
+    XCTAssertEqualObjects(updated, expectedUpdated, @"Not as expected");
+    
     NSMutableIndexSet *expectedRemoved = [NSMutableIndexSet new];
     XCTAssertEqualObjects(removed, expectedRemoved, @"Not as expected");
     
     NSMutableIndexSet *expectedAdded = [NSMutableIndexSet new];
     XCTAssertEqualObjects(added, expectedAdded, @"Not as expected");
+}
+
+- (void)testUpdatedFirstAndAddedAfter
+{
+    NSArray *a = @[
+                   [DataObject newWithId:1000 value:@"aaa"]
+                   ];
+    NSArray *b = @[[DataObject newWithId:1000 value:@"bbb"],
+                   [DataObject newWithId:1001 value:@"aaa"],
+                   [DataObject newWithId:1002 value:@"ccc"]
+                   ];
+    
+    NSIndexSet *common, *removed, *added, *updated;
+    [LCS <DataObject *> compareArray:a withArray:b commonIndexes:&common updatedIndexes:&updated removedIndexes:&removed addedIndexes:&added objectComparison:^LCSObjectEquallity(DataObject *objectA, DataObject *objectB) {
+        return [objectA compareWith:objectB];
+    }];
+    
+    NSMutableIndexSet *expectedCommon = [NSMutableIndexSet new];
+    [expectedCommon addIndex:0];
+    XCTAssertEqualObjects(common, expectedCommon, @"Not as expected");
     
     NSMutableIndexSet *expectedUpdated = [NSMutableIndexSet new];
     [expectedUpdated addIndex:0];
     XCTAssertEqualObjects(updated, expectedUpdated, @"Not as expected");
+    
+    NSMutableIndexSet *expectedRemoved = [NSMutableIndexSet new];
+    XCTAssertEqualObjects(removed, expectedRemoved, @"Not as expected");
+    
+    NSMutableIndexSet *expectedAdded = [NSMutableIndexSet new];
+    [expectedAdded addIndex:1];
+    [expectedAdded addIndex:2];
+    XCTAssertEqualObjects(added, expectedAdded, @"Not as expected");
+}
+
+- (void)testAddedBefore
+{
+    NSArray *a = @[
+                   [DataObject newWithId:1002 value:@"aaa"]
+                   ];
+    NSArray *b = @[[DataObject newWithId:1000 value:@"aaa"],
+                   [DataObject newWithId:1001 value:@"aaa"],
+                   [DataObject newWithId:1002 value:@"aaa"]
+                   ];
+    
+    NSIndexSet *common, *removed, *added, *updated;
+    [LCS <DataObject *> compareArray:a withArray:b commonIndexes:&common updatedIndexes:&updated removedIndexes:&removed addedIndexes:&added objectComparison:^LCSObjectEquallity(DataObject *objectA, DataObject *objectB) {
+        return [objectA compareWith:objectB];
+    }];
+    
+    NSMutableIndexSet *expectedCommon = [NSMutableIndexSet new];
+    [expectedCommon addIndex:0];
+    XCTAssertEqualObjects(common, expectedCommon, @"Not as expected");
+    
+    NSMutableIndexSet *expectedUpdated = [NSMutableIndexSet new];
+    XCTAssertEqualObjects(updated, expectedUpdated, @"Not as expected");
+    
+    NSMutableIndexSet *expectedRemoved = [NSMutableIndexSet new];
+    XCTAssertEqualObjects(removed, expectedRemoved, @"Not as expected");
+    
+    NSMutableIndexSet *expectedAdded = [NSMutableIndexSet new];
+    [expectedAdded addIndex:0];
+    [expectedAdded addIndex:1];
+    XCTAssertEqualObjects(added, expectedAdded, @"Not as expected");
+}
+
+- (void)testUpdatedFirstAddedBefore
+{
+    NSArray *a = @[
+                   [DataObject newWithId:1002 value:@"aaa"]
+                   ];
+    NSArray *b = @[[DataObject newWithId:1000 value:@"aaa"],
+                   [DataObject newWithId:1001 value:@"aaa"],
+                   [DataObject newWithId:1002 value:@"bbb"]
+                   ];
+    
+    NSIndexSet *common, *removed, *added, *updated;
+    [LCS <DataObject *> compareArray:a withArray:b commonIndexes:&common updatedIndexes:&updated removedIndexes:&removed addedIndexes:&added objectComparison:^LCSObjectEquallity(DataObject *objectA, DataObject *objectB) {
+        return [objectA compareWith:objectB];
+    }];
+    
+    NSMutableIndexSet *expectedCommon = [NSMutableIndexSet new];
+    [expectedCommon addIndex:0];
+    XCTAssertEqualObjects(common, expectedCommon, @"Not as expected");
+    
+    NSMutableIndexSet *expectedUpdated = [NSMutableIndexSet new];
+    [expectedUpdated addIndex:0];
+    XCTAssertEqualObjects(updated, expectedUpdated, @"Not as expected");
+    
+    NSMutableIndexSet *expectedRemoved = [NSMutableIndexSet new];
+    XCTAssertEqualObjects(removed, expectedRemoved, @"Not as expected");
+    
+    NSMutableIndexSet *expectedAdded = [NSMutableIndexSet new];
+    [expectedAdded addIndex:0];
+    [expectedAdded addIndex:1];
+    XCTAssertEqualObjects(added, expectedAdded, @"Not as expected");
 }
 
 @end

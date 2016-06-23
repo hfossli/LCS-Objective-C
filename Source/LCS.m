@@ -43,7 +43,7 @@
             else {
                 LCSObjectEquallity equality = objectComparison(a[i], b[j]);
                 cache[i][j] = equality;
-                if (equality == LCSObjectEquallityEqual) {
+                if (equality != LCSObjectEquallityUnequal) {
                     lengths[i][j] = 1 + lengths[i+1][j+1];
                 } else {
                     lengths[i][j] = MAX(lengths[i+1][j], lengths[i][j+1]);
