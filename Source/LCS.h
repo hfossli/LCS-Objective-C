@@ -45,4 +45,15 @@ typedef NS_ENUM(int, LCSObjectEquallity)
         addedIndexes:(out NSIndexSet **)addedIndexesPointer
     objectComparison:(LCSObjectEquallity(^)(ObjectType objectA, ObjectType objectB))objectComparison;
 
+/*
+ Can be used with strings, arrays, index set and any other ordered enumeratable construct
+ */
++ (void)compareListWithCount:(NSUInteger)countA
+                        with:(NSUInteger)countB
+               commonIndexes:(out NSIndexSet **)commonIndexesPointer
+              updatedIndexes:(out NSIndexSet **)updatedIndexesPointer
+              removedIndexes:(out NSIndexSet **)removedIndexesPointer
+                addedIndexes:(out NSIndexSet **)addedIndexesPointer
+            objectComparison:(LCSObjectEquallity(^)(NSUInteger indexA, NSUInteger indexB))objectComparison;
+
 @end

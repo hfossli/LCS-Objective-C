@@ -30,18 +30,29 @@
         addedIndexes:(out NSIndexSet **)addedIndexesPointer
     objectComparison:(LCSObjectEquallity(^)(id objectA, id objectB))objectComparison
 {
-    NSUInteger aCount = a.count;
-    NSUInteger bCount = b.count;
-    NSInteger lengths[aCount+1][bCount+1];
-    LCSObjectEquallity cache[aCount+1][bCount+1];
+    [self compareListWithCount:a.count with:b.count commonIndexes:commonIndexesPointer updatedIndexes:updatedIndexesPointer removedIndexes:removedIndexesPointer addedIndexes:addedIndexesPointer objectComparison:^LCSObjectEquallity(NSUInteger indexA, NSUInteger indexB) {
+        return objectComparison(a[indexA], b[indexB]);
+    }];
+}
+
++ (void)compareListWithCount:(NSUInteger)countA
+                        with:(NSUInteger)countB
+               commonIndexes:(out NSIndexSet **)commonIndexesPointer
+              updatedIndexes:(out NSIndexSet **)updatedIndexesPointer
+              removedIndexes:(out NSIndexSet **)removedIndexesPointer
+                addedIndexes:(out NSIndexSet **)addedIndexesPointer
+            objectComparison:(LCSObjectEquallity(^)(NSUInteger indexA, NSUInteger indexB))objectComparison
+{
+    NSInteger lengths[countA+1][countB+1];
+    LCSObjectEquallity cache[countA+1][countB+1];
     
-    for (NSInteger i = aCount; i >= 0; i--) {
-        for (NSInteger j = bCount; j >= 0; j--) {
-            if (i == aCount || j == bCount) {
+    for (NSInteger i = countA; i >= 0; i--) {
+        for (NSInteger j = countB; j >= 0; j--) {
+            if (i == countA || j == countB) {
                 lengths[i][j] = 0;
             }
             else {
-                LCSObjectEquallity equality = objectComparison(a[i], b[j]);
+                LCSObjectEquallity equality = objectComparison(i, j);
                 cache[i][j] = equality;
                 if (equality != LCSObjectEquallityUnequal) {
                     lengths[i][j] = 1 + lengths[i+1][j+1];
@@ -55,7 +66,7 @@
     NSMutableIndexSet *commonIndexes = [NSMutableIndexSet indexSet];
     NSMutableIndexSet *updatedIndexes = [NSMutableIndexSet indexSet];
     
-    for (NSInteger i = 0, j = 0 ; i < aCount && j < bCount;) {
+    for (NSInteger i = 0, j = 0 ; i < countA && j < countB;) {
         
         LCSObjectEquallity equality = cache[i][j];
         
@@ -89,7 +100,7 @@
     if (removedIndexesPointer) {
         NSMutableIndexSet *removedIndexes = [NSMutableIndexSet indexSet];
         
-        for (NSInteger i = 0; i < aCount; i++) {
+        for (NSInteger i = 0; i < countA; i++) {
             if (![commonIndexes containsIndex:i]) {
                 [removedIndexes addIndex:i];
             }
@@ -103,8 +114,8 @@
         [commonIndexes getIndexes:commonIndexesArray maxCount:commonIndexes.count inIndexRange:nil];
 
         NSMutableIndexSet *addedIndexes = [NSMutableIndexSet indexSet];
-        for (NSInteger i = 0, j = 0; i < commonIndexes.count || j < bCount;) {
-            if (i < commonIndexes.count && j < bCount && cache[commonIndexesArray[i]][j] != LCSObjectEquallityUnequal) {
+        for (NSInteger i = 0, j = 0; i < commonIndexes.count || j < countB;) {
+            if (i < commonIndexes.count && j < countB && cache[commonIndexesArray[i]][j] != LCSObjectEquallityUnequal) {
                 i++;
                 j++;
             } else {
